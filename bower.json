@@ -1,0 +1,27 @@
+{
+  "name": "y",
+  "description": "y",
+  "main": "y",
+  "authors": [
+    "y"
+  ],
+  "license": "y",
+  "keywords": [
+    "y"
+  ],
+  "homepage": "y",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-cookies": "^1.6.2",
+    "angular-moment": "^1.0.1",
+    "angular-route": "^1.6.2",
+    "angular": "^1.6.2"
+  }
+}
