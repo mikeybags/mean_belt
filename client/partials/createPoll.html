@@ -1,0 +1,43 @@
+<div id="dashboard">
+  <div class="nav">
+    <a href="#!/dashboard">Cancel</a>
+    <a  href="" ng-click="logout()">Logout</a>
+  </div>
+  <h3>Please fill out all fields to submit a poll.</h3>
+  <h6>Question must be at least 8 characters, options must be at least 3 characters.</h6>
+  <form id="question_form" name="question_form" ng-submit="question_form.$valid && addQuestion()" novalidate>
+    <label for="question">Question:</label>
+    <input type="text" name="question" ng-model="newQuestion.question" ng-minlength="8"  required>
+    <span ng-show="question_form.$submitted || question_form.question.$touched">
+      <span ng-show="question_form.question.$error.required" class="red-text">Question is required.</span>
+      <span ng-show="question_form.question.$error.minlength" class="red-text">Question must be at least 8 characters.</span>
+    </span><br>
+    <label for="option1">Option 1:</label>
+    <input class="option" name="option1" type="text" ng-model="newQuestion.newOptions.option1" ng-minlength="3"  required>
+    <span ng-show="question_form.$submitted || question_form.option1.$touched">
+      <span ng-show="question_form.option1.$error.required" class="red-text">Option is required.</span>
+      <span ng-show="question_form.option1.$error.minlength" class="red-text">Options must be at least 3 characters.</span>
+    </span><br>
+    <label for="option2">Option 2:</label>
+    <input class="option" name="option2" type="text" ng-model="newQuestion.newOptions.option2" ng-minlength="3"  required>
+    <span ng-show="question_form.$submitted || question_form.option2.$touched">
+      <span ng-show="question_form.option2.$error.required" class="red-text">Option is required.</span>
+      <span ng-show="question_form.option2.$error.minlength" class="red-text">Options must be at least 3 characters.</span>
+    </span><br>
+    <label for="option3">Option 3:</label>
+    <input class="option" name="option3" type="text" ng-model="newQuestion.newOptions.option3" ng-minlength="3"  required>
+    <span ng-show="question_form.$submitted || question_form.option3.$touched">
+      <span ng-show="question_form.option3.$error.required" class="red-text">Option is required.</span>
+      <span ng-show="question_form.option3.$error.minlength" class="red-text">Options must be at least 3 characters.</span>
+    </span><br>    <label for="option4">Option 4:</label>
+    <input class="option" name="option4" type="text" ng-model="newQuestion.newOptions.option4" ng-minlength="3"  required>
+    <span ng-show="question_form.$submitted || question_form.option4.$touched">
+      <span ng-show="question_form.option4.$error.required" class="red-text">Option is required.</span>
+      <span ng-show="question_form.option4.$error.minlength" class="red-text">Options must be at least 3 characters.</span>
+    </span><br>    <input type="submit" value="Create Poll" ng-disabled="question_form.$invalid">
+    <div ng-if="errors" ng-repeat="error in errors">
+      <p class="red-text">{{ error }}</p>
+    </div>
+
+  </form>
+</div>

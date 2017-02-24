@@ -1,6 +1,6 @@
-app.controller('loginController', function(beltFactory, $scope, $location, $cookies){
+app.controller('loginController', function(surveyFactory, $scope, $location, $cookies){
   $scope.login = function(){
-    beltFactory.login($scope.user, function(data){
+    surveyFactory.login($scope.user, function(data){
       if(data.err){
         $scope.error = data.err
       }else{

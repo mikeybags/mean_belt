@@ -7,5 +7,11 @@ app.config(function ($routeProvider) {
   }).when('/dashboard', {
     templateUrl: '../partials/dashboard.html',
     controller: 'dashboardController'
+  }).when('/createPoll', {
+    templateUrl: '../partials/createPoll.html',
+    controller: 'createPollController'
+  }).when('/poll/:id', {
+    templateUrl: '../partials/poll.html',
+    controller: 'pollController'
   }).otherwise({redirectTo: '/'})
 });

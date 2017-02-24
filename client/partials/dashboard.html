@@ -1,2 +1,27 @@
-<a ng-click="logout()">Logout</a>
-<h2>Welcome, {{username}}!</h2>
+<div id="dashboard">
+  <div class="nav">
+    <a href="#!/createPoll">Create a new Poll</a>
+    <a href="" ng-click="logout()">Logout</a>
+  </div>
+  <br>
+  <h4>Current Polls:</h4>
+  <div id="questions">
+    <input class="search" type="text" ng-model="filter_questions" placeholder="Search">
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Survey Question</th>
+        <th>Date Posted</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="question in polls | filter: filter_questions track by $index">
+          <td>{{ question.posted_by }}</td>
+          <td><a ng-href="#!/poll/{{question._id}}">{{ question.question }}</a></td>
+          <td>{{ question.createdAt | date: 'shortDate'}}</td>
+          <td><a ng-if="user == question.posted_by" href="" ng-click="delete(question._id, $index)">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
