@@ -1,5 +1,3 @@
-console.log("Survey Controller Here! Press X to continue");
-
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 var Question = mongoose.model('Question');

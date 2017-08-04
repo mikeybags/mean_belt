@@ -1,5 +1,3 @@
-console.log("Routes ready to do some work sonnnnnn");
-
 var surveyController = require('../controllers/surveyController');
 
 module.exports = function (app){

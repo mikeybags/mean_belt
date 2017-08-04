@@ -1,5 +1,3 @@
-console.log("Hi Models here...don't tell your gf")
-
 var mongoose = require('mongoose')
 
 var UserSchema = new mongoose.Schema({
